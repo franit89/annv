@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary 💖</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="anniversary.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating hearts and photos background -->
+    <div id="floating-background"></div>
+    
+    <!-- Music Player -->
+    <div class="music-player">
+        <button class="music-btn" id="play-btn">
+            <i class="fas fa-play"></i>
+        </button>
+        <div class="music-info" id="music-info">Click to play music</div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="anniversary-container">
+        <!-- Anniversary Title -->
+        <div class="anniversary-header">
+            <h1 class="main-title">
+                <span class="heart">❤️</span>
+                Happy 10 Month Anniversary
+                <span class="heart">❤️</span>
+            </h1>
+            <p class="subtitle">Celebrating our beautiful journey together</p>
+        </div>
+        
+        <!-- Anniversary Letter -->
+        <div class="letter-container">
+            <div class="letter-envelope">
+                <div class="letter">
+                    <div class="letter-content">
+                        <!-- Letter Header -->
+                        <div class="letter-header">
+                            <div class="date">Today</div>
+                            <div class="location">In My Heart 💖</div>
+                        </div>
+                        
+                        <!-- Letter Body -->
+                        <div class="letter-body">
+                            <p class="greeting">My Dearest Love,</p>
+                            
+                            <p>Happy 10 month anniversary mera pyaraa betuuu, i love youu ♥️ bohot sara wala,
+Betuu pata hi nhi chal rha hai na kab or kitne jaldi jaldi ye time nikal rha hai ,</p>
+                            
+                            <p>aisa lagata hai kl ki hi baat hai, lekin 10 mahine ho gye or bs 2 months baad hume pure 1 saal ho jayega, vese to mai har month hi aise letter likh ta hu or pata mere pass </p>
+                            
+                            <p>aapke liye kabhi bhi words kahtam nhi hote mai aapke liye humesha hi itnaaa sara bool sakta hu or likh bhi sakata, ye sab mere liye bohot pyaara hai mere liye har ek din special hai kyu ki har ek din mere pass mera special sa betuu hai jo mujhe </p>
+                            
+                            <p>itnaa khush banata hai, mai bohot khush rhe ta hu baccha jab aap mere pass hote ho or jab nhi hote ho tab bhi aap mere pass hi hote ho meri imagination mai bhi, </p>
+                            
+                            <p>mere dreams mai bhi, aap mere andar hi ho mai aapne aapko aapme sama hua dekh ta hu, bs betuu mai humesha promise karta hu na to aaj bhi kr rha hu mai na aapko bohot jada khush rakhunga  humesha aapke pass rhunga humesha aapka rhaunga, i loveee youuu mera pyaar baccha ♥️❤️</p>
+                            
+                            <p class="closing">Happy 10 Month Anniversary, my love. Here's to many more months and years of love, laughter, and beautiful memories together.</p>
+                            
+                            <div class="signature">
+                                <p>Forever yours,</p>
+                                <p class="signature-name">Apka pyara baccha</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Letter Footer -->
+                        <div class="letter-footer">
+                            <div class="heart-seal">💌</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Photo Gallery -->
+        <div class="photo-gallery">
+            <h2 class="gallery-title">Our Beautiful Memories <i class="fas fa-heart"></i></h2>
+            <p class="gallery-subtitle">Click on photos to make them float in the background!</p>
+            
+            <div class="photos-grid">
+                <!-- Photo 1 - Replace with your photo -->
+                <div class="photo-item" data-photo="1">
+                    <img src="FOREVER.jpg" 
+                         alt="Our Memory 1" 
+                         class="gallery-photo">
+                    <div class="photo-caption"></div>
+                </div>
+                
+                <!-- Photo 2 - Replace with your photo -->
+                <div class="photo-item" data-photo="2">
+                    <img src="img1.jpg" 
+                         alt="Our Memory 2" 
+                         class="gallery-photo">
+                    <div class="photo-caption"></div>
+                </div>
+                
+                <!-- Photo 3 - Replace with your photo -->
+                <div class="photo-item" data-photo="3">
+                    <img src="img2.jpg" 
+                         alt="Our Memory 3" 
+                         class="gallery-photo">
+                    <div class="photo-caption"></div>
+                </div>
+                
+                <!-- Photo 4 - Replace with your photo -->
+                <div class="photo-item" data-photo="4">
+                    <img src="img3.jpg" 
+                         alt="Our Memory 4" 
+                         class="gallery-photo">
+                    <div class="photo-caption"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Anniversary Count -->
+        <div class="anniversary-count">
+            <div class="count-item">
+                <div class="count-number">10</div>
+                <div class="count-label">Months</div>
+            </div>
+            <div class="count-item">
+                <div class="count-number">300+</div>
+                <div class="count-label">Days</div>
+            </div>
+            <div class="count-item">
+                <div class="count-number">∞</div>
+                <div class="count-label">Memories</div>
+            </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="action-btn" id="add-hearts-btn">
+                <i class="fas fa-heart"></i> Add More Hearts
+            </button>
+            <button class="action-btn" id="replay-animation-btn">
+                <i class="fas fa-redo"></i> Replay Letter Animation
+            </button>
+            <button class="action-btn" id="add-photos-btn">
+                <i class="fas fa-images"></i> Add Floating Photos
+            </button>
+        </div>
+        
+        <!-- Message -->
+        <div class="final-message">
+            <p class="love-quote">"Every love story is beautiful, but ours is my favorite."</p>
+            <p class="closing-line">Here's to many more beautiful months together! 💕</p>
+        </div>
+    </div>
+    
+    <!-- Audio -->
+    <audio id="background-music" loop preload="auto">
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="anniversary.js"></script>
+</body>
+</html>

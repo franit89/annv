@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Slideshow 💐</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="slideshow.css">
+</head>
+<body>
+    <audio id="bgMusic" src="music.mp3" loop></audio>
+    <!-- Floating hearts and flowers background -->
+    <div id="floating-background"></div>
+    
+    <!-- Main Content -->
+    <div class="slideshow-container">
+        <div class="header">
+            <h1 class="title">i lovee youu betuu 💖</h1>
+            <p class="subtitle">You don’t deserve just a rose.
+You deserve every flower in this world, because each one reflects a part of you—your beauty, your kindness, <br>your strength, and the way you quietly <br> make everything around you more alive.</p>
+        </div>
+        
+        <!-- Slideshow -->
+        <div class="flower-slideshow">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="flower-card">
+                    <div class="flower-image-container">
+                        <img src="rose.png" alt="Red Rose" class="flower-img">
+                    </div>
+                    <div class="flower-content">
+                        <h2 class="flower-name">Red Rose 🌹</h2>
+                        <p class="flower-message">Because your love is deep, timeless, and effortlessly beautiful.</p>
+                        <div class="flower-quote">"A single rose can be my garden..."</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="flower-card">
+                    <div class="flower-image-container">
+                        <img src="sunflower.png" alt="Sunflower" class="flower-img">
+                    </div>
+                    <div class="flower-content">
+                        <h2 class="flower-name">Sunflower 🌻</h2>
+                        <p class="flower-message">Because you shine even on my darkest days and always turn toward light.</p>
+                        <div class="flower-quote">"Keep your face to the sunshine..."</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="flower-card">
+                    <div class="flower-image-container">
+                        <img src="tulip.png" alt="Tulips" class="flower-img">
+                    </div>
+                    <div class="flower-content">
+                        <h2 class="flower-name">Tulips 🌷</h2>
+                        <p class="flower-message">For your soft elegance and the warmth you bring without trying.</p>
+                        <div class="flower-quote">"Tulips don't strive to impress anyone..."</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="flower-card">
+                    <div class="flower-image-container">
+                        <img src="orchid.png" alt="Orchid" class="flower-img">
+                    </div>
+                    <div class="flower-content">
+                        <h2 class="flower-name">Orchid 💮</h2>
+                        <p class="flower-message">Because you’re rare, unique, and impossible to replace.</p>
+                        <div class="flower-quote">"The orchid is a symbol of rare beauty..."</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="slide">
+                <div class="flower-card">
+                    <div class="flower-image-container">
+                        <img src="lotus.png" alt="Daisies" class="flower-img">
+                    </div>
+                    <div class="flower-content">
+                        <h2 class="flower-name">lotus</h2>
+                        <p class="flower-message">Because no matter what surrounds you, you rise with grace and strength.</p>
+                        <div class="flower-quote">"Daisies are like sunshine to the ground..."</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 6 -->
+            <div class="slide">
+                <div class="flower-card">
+                    <div class="flower-image-container">
+                        <img src="lily.png" alt="Lily" class="flower-img">
+                    </div>
+                    <div class="flower-content">
+                        <h2 class="flower-name">Lily 🌸</h2>
+                        <p class="flower-message">For your pure heart and the calm you bring into my life.</p>
+                        <div class="flower-quote">"Lilies are the perfect flower..."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Dots -->
+        <div class="slide-indicators">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+        </div>
+        
+        <!-- Controls -->
+        <div class="controls">
+          <button class="control-btn" id="prev-btn">
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <button class="control-btn" id="next-btn">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <!-- Auto-play toggle -->
+        <div class="autoplay-control">
+            <label class="switch">
+                <input type="checkbox" id="autoplay-toggle" checked>
+                <span class="slider"></span>
+            </label>
+            <span class="autoplay-label">Auto Slide</span>
+        </div>
+        
+        <!-- Next Page Button -->
+       <a href="anniversary.html">  <button class="next-page-btn" id="">
+            <i class="fas fa-heart"></i> Continue to Next Page</a> 
+        </button>
+        
+        <!-- Music Player -->
+        <div class="music-player">
+            <button class="music-btn" id="play-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="music-info" id="music-info">Background Music: Romantic Melody</div>
+        </div>
+    </div>
+    
+    <!-- Audio -->
+    <audio id="background-music" loop preload="auto">
+        <source src="music" type="audio/mpeg">
+    </audio>
+    
+    <script src="slideshow.js"></script>
+</body>
+</html>

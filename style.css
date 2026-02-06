@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Floating background elements */
+#floating-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-element {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.7;
+    animation: float 15s infinite linear;
+}
+
+.heart-float {
+    color: #ff6b8b;
+}
+
+.flower-float {
+    color: #ffd166;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Page styling */
+.page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    z-index: 2;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+}
+
+/* Title and text */
+.title {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 107, 139, 0.6);
+    }
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.instructions {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 15px 25px;
+    margin-top: 40px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.instructions p {
+    color: #e84393;
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+.instructions i {
+    margin-right: 10px;
+    color: #ff6b8b;
+}
+
+/* Envelope Styling */
+.envelope-wrapper {
+    perspective: 1000px;
+    margin: 40px auto;
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.envelope-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.envelope.open {
+    transform: rotateX(180deg);
+}
+
+.envelope-front, .envelope-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.envelope-front {
+    background: linear-gradient(45deg, #ff6b8b, #ff8e9e);
+    transform-style: preserve-3d;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.envelope-back {
+    background: linear-gradient(45deg, #ff8e9e, #ff6b8b);
+    transform: rotateX(180deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #ff4757;
+    border-radius: 10px 10px 0 0;
+    transform-origin: top;
+    transition: transform 1s 0.2s ease;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(45deg, #ff8e9e, #ff6b8b);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-icon {
+    font-size: 60px;
+    color: white;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Heart pop animation */
+.heart-pop {
+    position: fixed;
+    font-size: 30px;
+    color: #ff4757;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    animation: popUp 1.5s ease-out forwards;
+}
+
+@keyframes popUp {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Rose Day Card Styling */
+.card-container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.rose-day-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.rose-day-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, #ff6b8b, #ffc3a0, #ff6b8b);
+}
+
+.rose-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: block;
+    border: 8px solid #ffc3a000;
+   
+    animation: floatImage 3s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.card-title {
+    color: #e84393;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-message {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.card-message p {
+    margin-bottom: 15px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    color: #e84393;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.back-btn {
+    background: linear-gradient(45deg, #ff6b8b, #ff4757);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto 0;
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 139, 0.6);
+}
+
+.back-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .envelope-wrapper {
+        width: 250px;
+        height: 166px;
+    }
+    
+    .envelope-flap {
+        border-left: 125px solid transparent;
+        border-right: 125px solid transparent;
+        border-top: 83px solid #ff4757;
+    }
+    
+    .heart-icon {
+        font-size: 50px;
+    }
+    
+    .card-title {
+        font-size: 2rem;
+    }
+    
+    .rose-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .card-message {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .envelope-wrapper {
+        width: 220px;
+        height: 146px;
+    }
+    
+    .envelope-flap {
+        border-left: 110px solid transparent;
+        border-right: 110px solid transparent;
+        border-top: 73px solid #ff4757;
+    }
+    
+    .heart-icon {
+        font-size: 40px;
+    }
+    
+    .rose-day-card {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 1.8rem;
+    }
+    
+    .rose-image {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .back-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}

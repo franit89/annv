@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose Day Special 💌</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating hearts and flowers background -->
+    <div id="floating-background"></div>
+
+    <!-- Page 1: Envelope Page -->
+    <div class="page active" id="page-envelope">
+        <div class="container">
+            <h1 class="title">Click on the Envelope 💌</h1>
+            <p class="subtitle">A special Rose Day surprise awaits inside</p>
+            
+            <!-- Envelope -->
+            <div class="envelope-wrapper" id="envelope-wrapper">
+                <div class="envelope">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-body">
+                            <div class="heart-icon">💖</div>
+                        </div>
+                    </div>
+                    <div class="envelope-back"></div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <!-- Page 2: Rose Day Card -->
+    <div class="page" id="page-card">
+        <div class="card-container">
+            <div class="rose-day-card">
+                <!-- You can replace this with your own image path -->
+                <img src="rose.png" alt="Rose" class="rose-image" id="rose-image">
+                
+                <div class="card-content">
+                    <h2 class="card-title">Happy Rose Day Betuu! 🌹</h2>
+                    <div class="card-message">
+                        <div class="gif"><img src="mygif.gif" alt="Cute animation"></div>
+                    </div>
+                </div>
+                
+               <a href="slide.html"> <button class="back-btn" id="">
+                   click
+                </button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio for background music -->
+    <audio id="background-music" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
